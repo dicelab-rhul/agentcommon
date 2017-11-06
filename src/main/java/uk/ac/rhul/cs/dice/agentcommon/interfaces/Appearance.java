@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs.dice.agentcommon.interfaces;
 
-public interface Appearance {
+import java.io.Serializable;
+
+public interface Appearance extends Serializable {
 
 }
