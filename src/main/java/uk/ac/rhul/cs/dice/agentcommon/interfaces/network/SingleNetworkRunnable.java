@@ -1,7 +1,9 @@
 package uk.ac.rhul.cs.dice.agentcommon.interfaces.network;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 /**
  * 
@@ -51,4 +53,16 @@ public interface SingleNetworkRunnable extends BasicNetworkRunnable<ObjectInputS
      */
     @Override
     public abstract void setOutputChannels(ObjectOutputStream output);
+    
+    /**
+     * 
+     * Sets the {@link Socket} for this object.
+     * 
+     * @param hostname the {@link String} hostname to connect to.
+     * @param port the port to connect to.
+     * 
+     * @throws IOException if an I/O operation fails.
+     * 
+     */
+    public abstract void openSocket(String hostname, int port) throws IOException;
 }
