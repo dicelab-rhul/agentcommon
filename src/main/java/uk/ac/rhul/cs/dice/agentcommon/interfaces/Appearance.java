@@ -19,6 +19,6 @@ public interface Appearance extends Serializable {
      * 
      */
     public default Object serialize() {
-	return "UNSUPPORTED";
+	throw new UnsupportedOperationException("Please, implement this");
     }
 }
