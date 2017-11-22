@@ -56,13 +56,13 @@ public interface SingleNetworkRunnable extends BasicNetworkRunnable<ObjectInputS
     
     /**
      * 
-     * Sets the {@link Socket} for this object.
+     * Creates and sets the {@link Socket} for this object.
      * 
      * @param hostname the {@link String} hostname to connect to.
      * @param port the port to connect to.
      * 
      * @throws IOException if an I/O operation fails.
-     * 
+     *  
      */
     public abstract void openSocket(String hostname, int port) throws IOException;
 }
