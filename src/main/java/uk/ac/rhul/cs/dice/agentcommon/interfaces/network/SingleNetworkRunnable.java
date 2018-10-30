@@ -1,28 +1,29 @@
 package uk.ac.rhul.cs.dice.agentcommon.interfaces.network;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import org.apache.commons.io.serialization.ValidatingObjectInputStream;
+
 /**
  * 
- * This interface is for a {@link Runnable} which has only 1 pair of network communication channels (I/O). It extends {@link BasicNetworkRunnable} with {@link ObjectInputStream} and {@link ObjectOutputStream} as input and output channels.
+ * This interface is for a {@link Runnable} which has only 1 pair of network communication channels (I/O). It extends {@link BasicNetworkRunnable} with {@link ValidatingObjectInputStream} and {@link ObjectOutputStream} as input and output channels.
  * 
  * @author cloudstrife9999
  *
  */
-public interface SingleNetworkRunnable extends BasicNetworkRunnable<ObjectInputStream, ObjectOutputStream> {
+public interface SingleNetworkRunnable extends BasicNetworkRunnable<ValidatingObjectInputStream, ObjectOutputStream> {
     
     /**
      * 
-     * Returns the {@link ObjectInputStream} of this object.
+     * Returns the {@link ValidatingObjectInputStream} of this object.
      * 
-     * @return the {@link ObjectInputStream} of this object.
+     * @return the {@link ValidatingObjectInputStream} of this object.
      * 
      */
     @Override
-    public abstract ObjectInputStream getInputChannels();
+    public abstract ValidatingObjectInputStream getInputChannels();
     
     /**
      * 
@@ -36,13 +37,13 @@ public interface SingleNetworkRunnable extends BasicNetworkRunnable<ObjectInputS
     
     /**
      * 
-     * Sets the {@link ObjectInputStream} for this object.
+     * Sets the {@link ValidatingObjectInputStream} for this object.
      * 
-     * @param input the {@link ObjectInputStream} to set as the input channel.
+     * @param input the {@link ValidatingObjectInputStream} to set as the input channel.
      * 
      */
     @Override
-    public abstract  void setInputChannels(ObjectInputStream input);
+    public abstract  void setInputChannels(ValidatingObjectInputStream input);
     
     /**
      * 
