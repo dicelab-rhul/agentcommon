@@ -19,6 +19,7 @@
 			<groupId>org.cloudstrife9999</groupId>
 			<artifactId>LogUtilities</artifactId>
 			<version>1.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
